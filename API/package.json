@@ -1,0 +1,12 @@
+{
+    "name": "api",
+    "version": "1.0.0",
+    "description": "Descrição API",
+    "main": "api.js",
+    "scripts": {
+      "start": "node api.js"
+    },
+    "dependencies": {
+      "express": "^4.17.1" 
+    }
+  }
