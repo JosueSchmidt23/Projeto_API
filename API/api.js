@@ -1,13 +1,10 @@
 const express = require('express');
-const api = express();
-const PORT = 3000;
+const app = express();
+app.use(express.json());
 
-api.use(express.json());
-
-const getClientes = require('./clientes.js');
-
-api.post('/get.clientes', getClientes);
-
-api.listen(PORT, () => {
-  console.log(`API está executando na porta ${PORT}`);
+app.post('/clientes', (req, res) => {
+  // Buscar dados do banco de dados aqui...
+  res.json({ message: 'Dados do cliente' });
 });
+
+app.listen(3000, () => console.log('API rodando na porta 3000'));
