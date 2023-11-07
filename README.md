@@ -3,6 +3,5 @@
 ## Projeto em Desenvolvimento!
 Comandos para usar o Curl na aplicação: 
 ```Terminal
-docker exec -it projeto_api-app-1 bash
-curl -X POST -H "Content-Type: application/json" http://api:3000/clientes
+docker exec -it container-aplicacao curl -X POST -H "Content-Type: application/json" http://container-api:3000/get.clientes
 ```
