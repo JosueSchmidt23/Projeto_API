@@ -6,7 +6,7 @@ Este é um projeto que simula a interação entre uma API, uma aplicação e um 
 Certifique-se de ter o Docker, GitHub e o DBeaver instalado em seu computador. O DBeaver é opcional.
 
 ### Clonando o Repositório
-Com o Github instalado no computador, clone o repositório para sua máquina local indo em "Clone a repository" e em "URL", insira o link do deste repositório e  cliecle em "Clone".
+Com o Github instalado no computador, clone o repositório para sua máquina local indo em "Clone a repository" e em "URL", insira o link do deste repositório e clique em "Clone".
 
 ### Construindo a Imagem
 Navegue até o diretório do repositório clonado no seu computador e execute o seguinte comando pelo Terminal: 
