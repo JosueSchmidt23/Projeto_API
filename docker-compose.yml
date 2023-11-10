@@ -1,20 +1,34 @@
 version: '3'
 services:
-  app:
+  aplicacao:
     build:
-      context: ./app
-      dockerfile: Dockerfile
+      context: ./aplicacao
+    container_name: container-aplicacao
+    networks:
+      - minha-rede
     ports:
-      - '8080:8080'
+      - "8081:8081"
   api:
     build:
       context: ./api
-      dockerfile: Dockerfile
+    container_name: container-api
+    depends_on:
+      - banco-dados
+    networks:
+      - minha-rede
     ports:
-      - '3000:3000'
-  db:
+      - "3000:3000"
+  banco-dados:
     build:
-      context: ./db
-      dockerfile: Dockerfile
+      context: ./banco_dados
+    container_name: container-banco-dados
+    networks:
+      - minha-rede
     ports:
-      - '3306:3306'
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+networks:
+  minha-rede:
+volumes:
+  db_data:

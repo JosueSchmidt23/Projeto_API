@@ -1,13 +1,10 @@
 {
-    "name": "meu-projeto",
+    "name": "projeto-api",
     "version": "1.0.0",
-    "description": "",
-    "main": "app.js",
-    "scripts": {
-      "start": "node app.js"
-    },
+    "description": "API que fornece informações sobre clientes",
+    "main": "server.js",
     "dependencies": {
       "express": "^4.17.1",
-      "axios": "^0.21.1"
+      "mysql2": "^2.3.0"
     }
   }  
