@@ -14,8 +14,30 @@ Navegue até o diretório do repositório clonado no seu computador e execute o 
  docker-compose up
 ```
 OBS: Ao executar este comando o Docker Desktop deve estar em execução no computador!
-
-Após executar o comando o projeto já estará em execução no Docker e funcionando.
+Caso ocorrer o erro:
+```Terminal
+2.970 npm ERR! code SELF_SIGNED_CERT_IN_CHAIN
+2.970 npm ERR! errno SELF_SIGNED_CERT_IN_CHAIN
+2.979 npm ERR! request to https://registry.npmjs.org/axios failed, reason: self signed certificate in certificate chain
+2.985
+2.985 npm ERR! A complete log of this run can be found in:
+2.985 npm ERR!     /root/.npm/_logs/2023-11-23T12_26_57_338Z-debug.log
+------
+------
+ > [api 4/4] RUN npm install:
+2.963 npm ERR! code SELF_SIGNED_CERT_IN_CHAIN
+2.963 npm ERR! errno SELF_SIGNED_CERT_IN_CHAIN
+2.972 npm ERR! request to https://registry.npmjs.org/mysql2 failed, reason: self signed certificate in certificate chain
+2.977
+2.977 npm ERR! A complete log of this run can be found in:
+2.977 npm ERR!     /root/.npm/_logs/2023-11-23T12_26_57_333Z-debug.log
+------
+failed to solve: process "/bin/sh -c npm install" did not complete successfully: exit code: 1
+```
+Para solucionar ele é preciso colocar o seguinte codigo no Dockerfile da API e da Aplicação:
+```Dockerfile
+RUN npm config set strict-ssl false
+```
 
 ### Testando o Projeto
 Utilize este comando para testar o projeto:
