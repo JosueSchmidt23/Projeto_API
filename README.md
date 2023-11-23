@@ -34,7 +34,7 @@ Caso ocorrer o erro:
 ------
 failed to solve: process "/bin/sh -c npm install" did not complete successfully: exit code: 1
 ```
-Para solucionar ele é preciso colocar o seguinte codigo no Dockerfile da API e da Aplicação:
+Para solucionar ele é preciso colocar o seguinte código no Dockerfile da API e da Aplicação:
 ```Dockerfile
 RUN npm config set strict-ssl false
 ```
